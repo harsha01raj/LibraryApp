@@ -1,0 +1,97 @@
+/* Nav bar css */
+#navbar{
+  background-color: teal;
+  display: flex;
+  justify-content: space-around;
+  font-size: x-large;
+  height: 50px;
+  align-items: center;
+}
+#navbar>.link{
+text-decoration: none;
+color: red;
+}
+
+/* Create Book css */
+#CreateBook{
+  text-align: center;
+  border: 2px solid red;
+  width: 500px;
+  margin: auto;
+  height: 400px;
+  margin-top: 200px;
+  font-size: x-large;
+}
+
+#CreateBook>.title{
+  display: block;
+}
+
+#CreateBook>.title>input{
+  width: 70%;
+  height: 30px;
+  margin-top: 30px;
+}
+#CreateBook>.title>.author{
+  margin-bottom: 30px;
+}
+
+/* Register page css */
+#Register{
+  text-align: center;
+  border: 2px solid red;
+  width: 500px;
+  margin: auto;
+  height: 400px;
+  margin-top: 200px;
+  font-size: x-large;
+}
+#Register>.input{
+ display: block;
+}
+#Register>.input>input,select{
+  width: 70%;
+  height: 30px;
+  margin-top: 30px;
+}
+#Register>.Button{
+  margin-top: 30px;
+  width: 100px;
+  height: 30px;
+}
+/* Home page css */
+#home{
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 20px;
+}
+#home>.card{
+  border: 2px solid grey;
+  padding: 5px;
+}
+.heading{
+text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+  #home{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #home{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+  }
+}
