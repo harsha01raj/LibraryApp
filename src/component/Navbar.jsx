@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 const Navbar = () => {
   const navigate = useNavigate();
   const handleClick = (e) => {
+    alert("You are logging out")
     navigate("/login")
     e.preventDefault();
     localStorage.removeItem("Token");
