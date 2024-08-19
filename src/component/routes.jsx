@@ -3,6 +3,7 @@ import Home from "../pages/Home";
 import CreateBook from "../pages/CreateBook";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
+import UpdateBook from "../pages/updateBook";
 
 const routes = () => {
   return (
@@ -18,6 +19,9 @@ const routes = () => {
       </Route>
       <Route path="/login" element={<Login />}>
         Login
+      </Route>
+      <Route path="/edit" element={<UpdateBook />}>
+        UpdateBook
       </Route>
     </Routes>
   );

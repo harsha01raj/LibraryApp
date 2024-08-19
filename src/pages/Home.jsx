@@ -26,6 +26,35 @@ const Home = () => {
       console.log(error.message);
     }
   };
+
+  const handleDelete=async(id)=>{
+    const token = localStorage.getItem("Token");
+    // console.log(id)
+    // console.log(token)
+    if (!token) {
+      alert("Your are not login please login first...");
+      navigate("/login");
+    }
+    try {
+      const res=await fetch(`https://librarybackend-1-529i.onrender.com/book/${id}`,{
+        method:"DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type":"application/json"
+        },
+      });
+      const data = await res.json();
+      console.log(data)
+      alert("Book deleted successfully");
+      bookFetch();
+    } catch (error) {
+      console.log(error.message);
+      alert(error.message)
+    }
+  }
+
+ 
+ 
   useEffect(() => {
     bookFetch();
   }, []);
@@ -37,8 +66,13 @@ const Home = () => {
           books.map((book) => {
             return (
               <div key={book._id} className="card">
+                <h2>_id:{book._id}</h2>
                 <h2>Title: {book.title}</h2>
                 <h2>Author: {book.author}</h2>
+                <div>
+                  <button onClick={()=>{navigate('/edit'),localStorage.setItem("id",JSON.stringify(book._id))}}>Edit</button>
+                  <button onClick={()=>handleDelete(book._id)}>Delete</button>
+                </div>
               </div>
             );
           })
